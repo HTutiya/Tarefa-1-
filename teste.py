@@ -8,7 +8,7 @@ def menu_principal():
 
         print("""
 =================================================
- SISTEMA DE GERENCIAMENTO DE ENTREGAS
+ SISTEMA PRINCIPAL
 =================================================
 
 1 - Cadastrar Pedido
@@ -46,8 +46,8 @@ def menu_principal():
                 print("Opção inválida.")
 
 def menu_operacoes():
-
-    while True:
+    check=0
+    while check == 0:
 
         print("""
 ============= OPERAÇÕES =============
@@ -72,15 +72,16 @@ def menu_operacoes():
                 atualizar_pedido()
 
             case "0":
-                break
+                check = 1
 
             case _:
                 print("Opção inválida.")
 
 
 def menu_consultas():
+    cjeck = 0
 
-    while True:
+    while check == 0:
 
         print("""
 ================ CONSULTAS ================
@@ -113,7 +114,7 @@ def menu_consultas():
                 entregas_por_entregador()
 
             case "0":
-                break
+                check = 1
 
             case _:
                 print("Opção inválida.")
@@ -141,13 +142,13 @@ def capacidade_maxima(veiculo):
     match veiculo:
 
         case "moto":
-            return 2
+            return 1
 
         case "carro":
-            return 4
+            return 2
 
         case "van":
-            return 6
+            return 3
 
         case _:
             return 0
