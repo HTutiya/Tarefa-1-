@@ -63,13 +63,13 @@ def menu_operacoes():
         match op:
 
             case "1":
-                associar_pedido()
+                associar()
 
             case "2":
                 remover_associacao()
 
             case "3":
-                atualizar_pedido()
+                atualizar()
 
             case "0":
                 check = 1
@@ -79,7 +79,7 @@ def menu_operacoes():
 
 
 def menu_consultas():
-    cjeck = 0
+    check = 0
 
     while check == 0:
 
@@ -228,7 +228,7 @@ def cadastrar_entregador():
             print("Veículo inválido.")
 
 
-def associar_pedido():
+def associar():
 
     print("\n=========== ASSOCIAR PEDIDO ===========")
 
@@ -305,7 +305,7 @@ def remover_associacao():
     print("Associação removida.")
 
 
-def atualizar_pedido():
+def atualizar():
 
     print("\n=========== ATUALIZAR PEDIDO ===========")
 
