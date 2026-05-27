@@ -105,7 +105,7 @@ def menu_consultas():
                 pedidos_entregues()
 
             case "3":
-                buscar_pedido()
+                buscar()
 
             case "4":
                 entregadores_disponiveis()
@@ -382,7 +382,7 @@ def atualizar():
             print("Opção inválida.")
 
 
-def mostrar_pedido(id_pedido, pedido):
+def mostrar(id_pedido, pedido):
 
     print("\n--------------------------------")
 
@@ -409,7 +409,7 @@ def pedidos_pendentes():
 
         if pedido["status"] == "Pendente":
 
-            mostrar_pedido(id_pedido, pedido)
+            mostrar(id_pedido, pedido)
 
             encontrou = True
 
@@ -429,7 +429,7 @@ def pedidos_entregues():
 
         if pedido["status"] == "Entregue":
 
-            mostrar_pedido(id_pedido, pedido)
+            mostrar(id_pedido, pedido)
 
             encontrou = True
 
@@ -437,14 +437,14 @@ def pedidos_entregues():
         print("Nenhum pedido entregue.")
 
 
-def buscar_pedido():
+def buscar():
 
     print("\n============ BUSCAR PEDIDO ============")
 
     id_pedido = input("Digite o ID: ").upper()
 
     if id_pedido in pedidos:
-        mostrar_pedido(id_pedido, pedidos[id_pedido])
+        mostrar(id_pedido, pedidos[id_pedido])
 
     else:
         print("Pedido não encontrado.")
@@ -492,7 +492,7 @@ def entregas_por_entregador():
             pedido["status"] == "Entregue"
         ):
 
-            mostrar_pedido(id_pedido, pedido)
+            mostrar(id_pedido, pedido)
 
             encontrou = True
 
