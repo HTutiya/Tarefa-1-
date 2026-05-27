@@ -1,3 +1,4 @@
+
 pedidos = {}
 entregadores = {}
 
@@ -7,9 +8,9 @@ def menu_principal():
     while True:
 
         print("""
-=================================================
- SISTEMA PRINCIPAL
-=================================================
+
+ ==================SISTEMA PRINCIPAL====================
+
 
 1 - Cadastrar Pedido
 2 - Cadastrar Entregador
@@ -247,10 +248,6 @@ def associar():
     pedido = pedidos[id_pedido]
 
     entregador = entregadores[id_ent]
-
-    if pedido["status"] == "Cancelado":
-        print("Pedido cancelado.")
-        return
 
     if pedido["entregador"] is not None:
         print("Pedido já possui entregador.")
@@ -509,7 +506,6 @@ def relatorios():
     pendente = 0
     rota = 0
     entregue = 0
-    cancelado = 0
 
     for id_pedido in pedidos:
 
@@ -526,8 +522,6 @@ def relatorios():
             case "Entregue":
                 entregue += 1
 
-            case "Cancelado":
-                cancelado += 1
 
     print("\nTotal de pedidos:", total)
 
@@ -535,7 +529,6 @@ def relatorios():
     print("Pendente:", pendente)
     print("Em rota:", rota)
     print("Entregue:", entregue)
-    print("Cancelado:", cancelado)
 
     print("\n====== PEDIDOS PRIORIDADE ALTA ======")
 
